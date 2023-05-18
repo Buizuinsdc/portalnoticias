@@ -22,8 +22,13 @@ include('conexao.php');
       
       <label for="autor">Autor:</label>
       <input type="text" id="autor" name="autor"><br><br>
+
+      <label for="Arquivos">Foto da Noticia:</label>
+      <input type="text" id="arquivo" name="arquivo"><br><br>
       
-      <input type="submit" value="Enviar">
+      <input type="submit" value="enviar">
     </form>
+
+    <script src="Js/script.js"></script>
   </body>
 </html>
