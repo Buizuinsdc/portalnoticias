@@ -35,7 +35,7 @@ include('conexao.php');
           <input type="text" name="email" placeholder="E-mail" required>
           <input type="password" name="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
-        </form>   
+        </form><br><br>
         <form action="cadastro.php">
          <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
         </form>
