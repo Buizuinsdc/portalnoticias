@@ -34,10 +34,8 @@ include('conexao.php');
         <form action="login.php" method="POST">
           <input type="text" name="email" placeholder="E-mail" required>
           <input type="password" name="senha" placeholder="Senha" required>
-        </form>
-        <form action="cadastro.php">
-        <button type="submit">Entrar</button>
-        </form>
+            <button type="submit">Entrar</button>
+        </form>   
         <form action="cadastro.php">
          <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
         </form>
