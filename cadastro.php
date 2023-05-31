@@ -1,25 +1,32 @@
-<?php 
-session_start();
-include('conexao.php');
+<php 
+  session_start();
+  include('conexao.php');
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cadastro de Usuário</title>
+  <title>Cadastro</title>
+  <link rel="stylesheet" type="text/css" href="css/style2.css">
 </head>
 <body>
-  <h1>Cadastro de Usuário</h1>
-  <form method="post" action="processa-cadastro.php">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome"><br><br>
-
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email"><br><br>
-
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="senha"><br><br>
-
-    <input type="submit" value="Cadastrar">
-  </form>
+  <div class="card">
+    <div class="content-container">
+      <div class="form-container">
+        <h2>Cadastro</h2>
+        <form method="post" action="processa-cadastro.php">
+          <input type="text" name="nome" placeholder="Nome de usuário" required>
+          <input type="email" name="email" placeholder="E-mail do usuario" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Entrar</button>
+        </form>
+        <p>Ja tem uma conta? <a href="index.php">faça seu Login</a></p>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="img/undraw_News_re_6uub.png" alt="Imagem de fundo">
+    </div>
+  </div>
 </body>
 </html>
