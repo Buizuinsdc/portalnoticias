@@ -12,7 +12,7 @@ $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$s
 if (mysqli_query($conexao, $sql)) {
    if ($_SERVER["REQUEST_METHOD"] == "POST") {   
    echo '<script>alert("Conta criada com sucesso!");</script>';
-    header('Location: login.php');
+    
     
 }   
 
