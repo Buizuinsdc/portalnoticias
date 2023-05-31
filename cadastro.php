@@ -19,7 +19,7 @@
           <input type="text" name="nome" placeholder="Nome de usuário" required>
           <input type="email" name="email" placeholder="E-mail do usuario" required>
           <input type="password" name="senha" placeholder="Senha" required>
-          <button type="submit">Entrar</button>
+          <button id="button" type="submit">Entrar</button>
         </form>
         <p>Ja tem uma conta? <a href="index.php">faça seu Login</a></p>
       </div>
