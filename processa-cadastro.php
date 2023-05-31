@@ -10,7 +10,7 @@ $senha = md5($_POST['senha']);
 $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
 if (mysqli_query($conexao, $sql)) {
-  echo "<script>alert('Usuário cadastrado com sucesso!');</script>";
+   echo '<script>alert("Conta criada com sucesso!");</script>';
   header('Location: login.php');
 } else {
   echo "Erro ao cadastrar usuário: " . mysqli_error($conexao);
