@@ -28,9 +28,6 @@ include('conexao.php');
                 echo '<script>alert("Mensagem de alerta!");</script>';
               }
               ?>
-                    <div class="notification is-danger">
-                      <p>ERRO: Usuário ou senha inválidos.</p>
-                    </div>
         <form action="login.php" method="POST">
           <input type="text" name="email" placeholder="E-mail" required>
           <input type="password" name="senha" placeholder="Senha" required>
