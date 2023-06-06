@@ -5,7 +5,7 @@ html,body {
   
 }
 .hero.is-success {
-  background: #f2f7fa;
+  background: #ffffff;
 }
 .hero .nav, .hero.is-success .nav {
   -webkit-box-shadow: none;
