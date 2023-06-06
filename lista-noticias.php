@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('conexao.php');
 ?>
 
@@ -15,8 +16,7 @@ include('conexao.php');
   <header>
     <h1>FICRNEWS</h1>
     <div class="buttons">
-      <button class="rounded-button">Cadastre-se</button>
-      <button class="rounded-button">Login</button>
+      <h2>Olá!   <?php echo $_SESSION['email'];?>   </h2>
     </div>
   </header>
 
