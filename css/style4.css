@@ -30,7 +30,7 @@ body {
   }
   
   input[type="submit"] {
-    background-color: orange;
+    background-color: blue;
     color: black;
     border: none;
     padding: 10px 20px;
