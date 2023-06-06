@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+    color: orange;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  h2 {
+    color: orange;
+  }
+  
+  h1 {
+    color: orange;
+    text-align: center;
+  }
+  
+  form {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
