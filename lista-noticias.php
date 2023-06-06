@@ -6,7 +6,7 @@ include('conexao.php');
 <html>
 <head>
   <title>Página de Notícias</title>
-  <link rel="stylesheet" type="text/css" href="estilos.css">
+  <link rel="stylesheet" type="text/css" href="css/noticiaslist.css">
 </head>
 <body>
   <header>
