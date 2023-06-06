@@ -35,7 +35,7 @@ include('conexao.php');
         </form><br>
         <form action="cadastro.php">
          <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
-        </form>
+        </form><br><br>
           <a href="listanoticia.php"><button>Ver Noticias</button></a>
       </div>
     </div>
