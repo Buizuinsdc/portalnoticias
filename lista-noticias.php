@@ -1,7 +1,20 @@
+
+
 <?php
 include('conexao.php');
-
-// Buscar as notícias no banco de dados
+?>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/noticiaslist.css"
+  <title>Document</title>
+</head>
+<body>
+<?php
+  // Buscar as notícias no banco de dados
 $sql = "SELECT * FROM noticias";
 $resultado = mysqli_query($conexao, $sql);
 
@@ -21,3 +34,5 @@ echo "</table>";
 // Fechar a conexão com o banco de dados
 mysqli_close($conexao);
 ?>
+</body>
+</html>
