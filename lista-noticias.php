@@ -55,19 +55,6 @@ include('conexao.php');
             
                 while ($noticia = mysqli_fetch_assoc($resultado)) {
 
-                echo "<div class='".$card."'> ";
-                echo "<img src=". $noticia['arquivo'] ."  class='".$cardimg."'/>" ;
-                echo "<div class='".$cardbody."'> ";
-                echo "<h5 class='".$cardtitle."'> ".$noticia['titulo']."  </h5> ";
-                echo "<p class='".$cardtext."'>  ".$noticia['subtexto']."</p> ";
-                echo "<label class='".$cardtext."'>Autor:  ".$noticia['autor']."</label> ";
-                echo "<button type='".$type."' class='".$btn."' data-bs-toggle='".$datatog."' data-bs-target='".$datator."'>  Clique para ler mais </button>             ";
-                echo "</div>";
-                echo "</div>";
-
-                  }
-
-                  while ($noticia = mysqli_fetch_assoc($resultado)) {
                     echo "
                 
                     <div class='".$modal."' id='".$ide."' tabindex='".$tabindex."' aria-labelledby='".$ariale."' aria-hidden='".$ariah."'>
@@ -91,8 +78,22 @@ include('conexao.php');
                     </div>
                     
                     ";
+
+
+                echo "<div class='".$card."'> ";
+                echo "<img src=". $noticia['arquivo'] ."  class='".$cardimg."'/>" ;
+                echo "<div class='".$cardbody."'> ";
+                echo "<h5 class='".$cardtitle."'> ".$noticia['titulo']."  </h5> ";
+                echo "<p class='".$cardtext."'>  ".$noticia['subtexto']."</p> ";
+                echo "<label class='".$cardtext."'>Autor:  ".$noticia['autor']."</label> ";
+                echo "<button type='".$type."' class='".$btn."' data-bs-toggle='".$datatog."' data-bs-target='".$datator."'>  Clique para ler mais </button>             ";
+                echo "</div>";
+                echo "</div>";
+
+
+
                   }
-                  ?>
+
                  
               
 
