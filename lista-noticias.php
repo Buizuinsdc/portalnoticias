@@ -55,31 +55,6 @@ include('conexao.php');
             
                 while ($noticia = mysqli_fetch_assoc($resultado)) {
 
-                    echo "
-                
-                    <div class='".$modal."' id='".$ide."' tabindex='".$tabindex."' aria-labelledby='".$ariale."' aria-hidden='".$ariah."'>
-                     <div class='".$modald."'>
-                     <div class='".$modalc."'>
-                    <div class='".$modalh."'>
-                    <h1 class='".$h1class."' id='".$idh1."'>".$noticia['titulo']."</h1>
-                    <button type='".$type."' class='".$btnclose."' data-bs-dismiss='".$datatog."' aria-label='".$arial."'></button>
-                    </div>
-                        <div class='".$modalbody."'>
-                            ".$noticia['conteudo']."
-                        </div>
-                    <div class='".$modalfooter."'>
-                    <button type='".$type."' class='".$btnsen."' data-bs-dismiss='".$datatog."'>Close</button>
-                    <button type='".$type."' class='".$btn."'>Save changes</button>
-                    
-                    
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    
-                    ";
-
-
                 echo "<div class='".$card."'> ";
                 echo "<img src=". $noticia['arquivo'] ."  class='".$cardimg."'/>" ;
                 echo "<div class='".$cardbody."'> ";
@@ -91,6 +66,33 @@ include('conexao.php');
                 echo "</div>";
 
 
+
+                echo "
+                                
+                <div class='".$modal."' id='".$ide."' tabindex='".$tabindex."' aria-labelledby='".$ariale."' aria-hidden='".$ariah."'>
+                 <div class='".$modald."'>
+                 <div class='".$modalc."'>
+                <div class='".$modalh."'>
+                <h1 class='".$h1class."' id='".$idh1."'>".$noticia['titulo']."</h1>
+                <button type='".$type."' class='".$btnclose."' data-bs-dismiss='".$datatog."' aria-label='".$arial."'></button>
+                </div>
+                    <div class='".$modalbody."'>
+                        ".$noticia['conteudo']."
+                    </div>
+                <div class='".$modalfooter."'>
+                <button type='".$type."' class='".$btnsen."' data-bs-dismiss='".$datatog."'>Close</button>
+                <button type='".$type."' class='".$btn."'>Save changes</button>
+                
+                
+                </div>
+                </div>
+                </div>
+                </div>
+                
+                ";
+
+
+                    
 
                   }
 
