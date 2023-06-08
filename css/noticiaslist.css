@@ -60,7 +60,7 @@ width: 100%;
   flex: 1;
 }
 
-#noti_area{
+.noti_area{
   display: flex;
   height: 100vw;
 }
