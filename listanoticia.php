@@ -1,56 +1,115 @@
 <?php
+session_start();
 include('conexao.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="pt">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="css/noticiaslist.css">
-  <title>Portal</title>
+    <title>Página de Notícias</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/noticiaslist.css">
 </head>
+
 <body>
-  <header>
-    <h1>FICRNEWS</h1>
-    <div class="buttons">
-      <button class="rounded-button">Cadastre-se</button>
-      <button class="rounded-button">Login</button>
-    </div>
-  </header>
+    <header class="area_menu">
+        <nav id="list_menu" style="background-color:transparent;">
+            <div class="area_logo"><img src="img/LogoFICR.png"></div>
+            <div class="menu">
+                <ul style="display:flex;">
+                    <a class="btn btn-primary" href="listanoticia.php">
+                        <li>Home</li>
+                    </a>
+                    <a class="btn btn-primary" href="">
+                        <li>Contato</li>
+                    </a>
+                    <div class="barra" style="height:50px; border-right:1px solid black;"></div>
+                    <a class="btn btn-primary"  style="background-color:#40bcd8;"href="index.php">
+                        <li>Login</li>
+                    </a>
+                    <a class="btn btn-primary" style="background-color:#40bcd8;" href="cadastro.php">
+                        <li>Cadastro</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-  <?php
-  // Buscar as notícias no banco de dados
-  $sql = "SELECT * FROM noticias";
-  $resultado = mysqli_query($conexao, $sql);
-  ?>
+    <section class="noti_area">
+        <div class="area_left">
+            <div class="area_noticias">
+            
+                <?php
+                $sql = "SELECT * FROM noticias";                       
+                $resultado = mysqli_query($conexao, $sql);
 
-  <table>
-    <tr>
-      <th>Título</th>
-      <th>Conteúdo</th>
-      <th>Autor</th>
-      <th>Imagem</th>
-    </tr>
-    <?php
-    $linha = 0;
-    while ($noticia = mysqli_fetch_assoc($resultado)) {
-      $linha++;
-      $cor = $linha % 2 == 0 ? "#f9f9f9" : "#ebebeb";
-      ?>
-      <tr style="background-color: <?php echo $cor; ?>">
-        <td><?php echo $noticia['titulo']; ?></td>
-        <td><?php echo $noticia['conteudo']; ?></td>
-        <td><?php echo $noticia['autor']; ?></td>
-        <td><img src="<?php echo $noticia['arquivo']; ?>"></td>
-      </tr>
-    <?php } ?>
-  </table>
+                $modal ="modal fade";                   $modalbody ="modal-body";
+                $ide="exampleModal";                    $modalfooter="modal-footer";
+                $card = "card";                         $tabindex="-1";                    $btnsen="btn btn-secondary";
+                $cardimg = "card-img-top";              $ariale="exampleModalLabel";
+                $width =":100px;";                      $ariah="true";
+                $cardbody = "card-body";                $modald="modal-dialog";
+                $cardtitle = "card-title";              $modalc="modal-content";
+                $cardtext = "card-text";                $modalh="modal-header";
+                $btn = "btn btn-primary";               $h1class="modal-title fs-5"; 
+                $datatog = "modal";                     $idh1="exampleModalLabel";
+                $type="button";                         $btnclose="btn-close";
+                $datator="#exampleModal";               $arial="close";
 
-  <?php
-  // Fechar a conexão com o banco de dados
-  mysqli_close($conexao);
-  ?>
+
+                while ($noticia = mysqli_fetch_assoc($resultado)) {
+                    echo "<div class='".$card."'> ";
+                    echo "<img src=". $noticia['arquivo'] ."  class='".$cardimg."'/>" ;
+                    echo "<div class='".$cardbody."'> ";
+                    echo "<h5 class='".$cardtitle."'> ".$noticia['titulo']."  </h5> ";
+                    echo "<p class='".$cardtext."'>  ".$noticia['subtexto']."</p> ";
+                    echo "<label class='".$cardtext."'>Autor:  ".$noticia['autor']."</label> ";
+                    echo "<button type='".$type."' class='".$btn."' data-bs-toggle='".$datatog."' data-bs-target='#".$ide."-".$noticia['id']."'>  Clique para ler mais </button>             ";
+                    echo "</div>";
+                    echo "</div>";
+                
+                    echo '<div class="' . $modal . '" id="' . $ide . '-' . $noticia['id'] . '" tabindex="' . $tabindex . '" aria-labelledby="' . $ariale . '" aria-hidden="' . $ariah . '">';                  
+                    echo '<div class="'.$modald.'">';
+                    echo '<div class="'.$modalc.'" >';
+                    echo '<div class="'.$modalh.'">';
+                    echo '<h1 class="' . $h1class . '" id="' . $idh1 . '">' . $noticia['titulo'] . '</h1>';
+                    echo '<button type="' . $type . '" class="' . $btnclose . '" data-bs-dismiss="' . $datatog . '" aria-label="' . $arial . '"></button>';
+                    echo '</div>';
+                    echo "<div class='" . $modalbody . "'>" . $noticia['conteudo'] . "</div>";
+                    echo "<div class='".$modalfooter."'>";
+                    echo "<button type='".$type."' class='".$btnsen."' data-bs-dismiss='".$datatog."'>Close</button>";
+                    echo "<button type='" . $type . "' class='" . $btn . "'>Salvar alterações</button>";
+                    echo "</div>";
+                    echo " </div> ";
+                    echo " </div> ";
+                    echo " </div> ";
+                }
+
+
+                 
+                                     
+
+
+ ?>
+
+        </div>
+        </div>
+        <div class="area_right">
+            <div class="right_full" style="margin:20px;">
+                <div class="searcharea">
+                <input id="searchbar" name="searchbar" type="search" placeholder="pesquisar" onkeyup="search()">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

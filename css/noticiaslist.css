@@ -4,34 +4,39 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 .area_menu {
   width: 100%;
   height: 70px;
 }
 .menu {
-  background-color: #006aff;
+background-color: #006aff;
 display: flex;
+justify-content: center;
 align-items: center;
-width: 300px;
+width: 600px;
+}
+
+.menu ul {
+  height: 30px;
 }
 
 .menu ul li {
   list-style: none;
 }
 .menu ul a {
-  padding: 8px;
-  margin-right: 20px;
-  border: 5px inset rgb(233, 233, 233); 
-  background-color: rgb(255, 255, 255);
-  border-radius: 15px 30px;
+  display: flex;
+  background-color: white;
+  padding: 15px;
+  margin: 10px;
+  align-items: center;
   text-decoration: none;
   color: black;
 }
-.menu ul a:hover {
-  border: 5px outset rgb(233, 233, 233);
-  background-color: rgb(168, 167, 167);
-  text-decoration:underline white;
-}
+
 
 #list_menu {
   display: flex;
@@ -52,22 +57,24 @@ width: 300px;
 }
 
 
-table tr td img {
-width: 100%;
-}
 
 .area_left {
   flex: 1;
+  
 }
 
 .noti_area{
   display: flex;
-  height: 100vw;
+  height: 100vh;
 }
 
 .area_right {
-  width: 500px;
-  background-color: aqua;
+  width: 400px;
+  border: 10px outset rgb(200, 200, 200);
+  animation-name: animation;
+  animation-iteration-count: infinite;
+  animation-play-state:unset;
+  animation-duration: 5s;
 }
 
 img {
@@ -83,10 +90,37 @@ img {
 .area_noticias {
   display: flex;
   flex-wrap: wrap;
+  padding: 30px;
+  border: 1px solid black;
+  height: 100%;
   
 }
 
 label {
   font-size: 13px;
   color: rgb(177, 177, 177);
+}
+
+.searcharea {
+  align-items: center;
+  height: 150px;
+  background-color: rgb(211, 211, 211);
+}
+
+#searchbar {
+  border-radius:10px 10px;
+  padding: 15px;
+  height: 20px;
+}
+
+.searcharea h6 {
+  position: relative;
+  left:115px;
+}
+
+@keyframes animation {
+  0%{ border: 10px outset rgb(184, 184, 184);}
+  35%{border: 10px outset rgb(118, 118, 118);}
+  70%{border: 10px outset rgb(140, 140, 140);}
+  100%{border: 10px outset rgb(232, 232, 232);}
 }

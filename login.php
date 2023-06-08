@@ -19,7 +19,7 @@ $row = mysqli_num_rows($result);
 if($row == 1){
 
 	$_SESSION['email'] = $email;
-	header('location: editor.php');
+	header('location: lista-noticias.php');
 	exit();
 }else{
 	header('Location: index.php');
