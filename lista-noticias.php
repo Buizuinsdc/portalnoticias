@@ -93,7 +93,7 @@ include('conexao.php');
         </div>
         </div>
         <div class="area_right">
-            ..
+            <input id="searchbar" name="searchbar" type="search" placeholder="pesquisar" onkeyup="search()">
         </div>
     </section>
 
