@@ -6,7 +6,6 @@ include('conexao.php');
 <!DOCTYPE html>
 <html>
 
-    
 <head>
     <title>Página de Notícias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -54,55 +53,44 @@ include('conexao.php');
                 $datatog = "modal";                     $idh1="exampleModalLabel";
                 $type="button";                         $btnclose="btn-close";
                 $datator="#exampleModal";               $arial="close";
-            
+
+
                 while ($noticia = mysqli_fetch_assoc($resultado)) {
-
-                echo "<div class='".$card."'> ";
-                echo "<img src=". $noticia['arquivo'] ."  class='".$cardimg."'/>" ;
-                echo "<div class='".$cardbody."'> ";
-                echo "<h5 class='".$cardtitle."'> ".$noticia['titulo']."  </h5> ";
-                echo "<p class='".$cardtext."'>  ".$noticia['subtexto']."</p> ";
-                echo "<label class='".$cardtext."'>Autor:  ".$noticia['autor']."</label> ";
-                echo "<button type='".$type."' class='".$btn."' data-bs-toggle='".$datatog."' data-bs-target='".$datator."'>  Clique para ler mais </button>             ";
-                echo "</div>";
-                echo "</div>";
-
-
-
-                echo "
-                                
-                <div class='".$modal."' id='".$ide."' tabindex='".$tabindex."' aria-labelledby='".$ariale."' aria-hidden='".$ariah."'>
-                 <div class='".$modald."'>
-                 <div class='".$modalc."'>
-                <div class='".$modalh."'>
-                <h1 class='".$h1class."' id='".$idh1."'>".$noticia['titulo']."</h1>
-                <button type='".$type."' class='".$btnclose."' data-bs-dismiss='".$datatog."' aria-label='".$arial."'></button>
-                </div>
-                    <div class='".$modalbody."'>
-                        ".$noticia['conteudo']."
-                    </div>
-                <div class='".$modalfooter."'>
-                <button type='".$type."' class='".$btnsen."' data-bs-dismiss='".$datatog."'>Close</button>
-                <button type='".$type."' class='".$btn."'>Save changes</button>
+                    echo "<div class='".$card."'> ";
+                    echo "<img src=". $noticia['arquivo'] ."  class='".$cardimg."'/>" ;
+                    echo "<div class='".$cardbody."'> ";
+                    echo "<h5 class='".$cardtitle."'> ".$noticia['titulo']."  </h5> ";
+                    echo "<p class='".$cardtext."'>  ".$noticia['subtexto']."</p> ";
+                    echo "<label class='".$cardtext."'>Autor:  ".$noticia['autor']."</label> ";
+                    echo "<button type='".$type."' class='".$btn."' data-bs-toggle='".$datatog."' data-bs-target='#".$ide."-".$noticia['id']."'>  Clique para ler mais </button>             ";
+                    echo "</div>";
+                    echo "</div>";
                 
-                
-                </div>
-                </div>
-                </div>
-                </div>
-                
-                ";
+                    echo '<div class="' . $modal . '" id="' . $ide . '-' . $noticia['id'] . '" tabindex="' . $tabindex . '" aria-labelledby="' . $ariale . '" aria-hidden="' . $ariah . '">';                  
+                    echo '<div class="'.$modald.'">';
+                    echo '<div class="'.$modalc.'" >';
+                    echo '<div class="'.$modalh.'">';
+                    echo '<h1 class="' . $h1class . '" id="' . $idh1 . '">' . $noticia['titulo'] . '</h1>';
+                    echo '<button type="' . $type . '" class="' . $btnclose . '" data-bs-dismiss="' . $datatog . '" aria-label="' . $arial . '"></button>';
+                    echo '</div>';
+                    echo "<div class='" . $modalbody . "'>" . $noticia['conteudo'] . "</div>";
+                    echo "<div class='".$modalfooter."'>";
+                    echo "<button type='".$type."' class='".$btnsen."' data-bs-dismiss='".$datatog."'>Close</button>";
+                    echo "<button type='" . $type . "' class='" . $btn . "'>Salvar alterações</button>";
+                    echo "</div>";
+                    echo " </div> ";
+                    echo " </div> ";
+                    echo " </div> ";
+                }
 
-
-                    
-
-                  }
 
                  
-              
+                                     
 
-            </div>
 
+ ?>
+
+        </div>
         </div>
         <div class="area_right">
             ..
