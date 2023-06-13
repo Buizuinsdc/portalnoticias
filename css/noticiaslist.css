@@ -60,12 +60,13 @@ width: 600px;
 
 .area_left {
   flex: 1;
+  height: 100%;
   
 }
 
 .noti_area{
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .area_right {
@@ -83,15 +84,13 @@ img {
 }
 
 .card {
-  margin: 20px;
-  width: 15rem;
+  margin: 13px;
+  width: 13rem;
 }
 
 .area_noticias {
   display: flex;
   flex-wrap: wrap;
-  padding: 30px;
-  border: 1px solid black;
   height: 100%;
   
 }
